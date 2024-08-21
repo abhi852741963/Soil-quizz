@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Soil Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What is soil?</p>
+                <label><input type="radio" name="q1" value="A"> Rocks and minerals</label>
+                <label><input type="radio" name="q1" value="B"> A mixture of organic matter, minerals, gases, liquids, and organisms</label>
+                <label><input type="radio" name="q1" value="C"> Only minerals</label>
+                <label><input type="radio" name="q1" value="D"> Only organic matter</label>
+            </div>
+            <div class="question">
+                <p>2. Which layer of soil is most fertile and contains the maximum amount of organic matter?</p>
+                <label><input type="radio" name="q2" value="A"> Topsoil</label>
+                <label><input type="radio" name="q2" value="B"> Subsoil</label>
+                <label><input type="radio" name="q2" value="C"> Bedrock</label>
+                <label><input type="radio" name="q2" value="D"> None of the above</label>
+            </div>
+            <div class="question">
+                <p>3. Which type of soil has the smallest particles and holds water the best?</p>
+                <label><input type="radio" name="q3" value="A"> Sandy soil</label>
+                <label><input type="radio" name="q3" value="B"> Clayey soil</label>
+                <label><input type="radio" name="q3" value="C"> Loamy soil</label>
+                <label><input type="radio" name="q3" value="D"> Peaty soil</label>
+            </div>
+            <div class="question">
+                <p>4. Which soil is well-drained and suitable for crops like peas and groundnuts?</p>
+                <label><input type="radio" name="q4" value="A"> Sandy soil</label>
+                <label><input type="radio" name="q4" value="B"> Clayey soil</label>
+                <label><input type="radio" name="q4" value="C"> Loamy soil</label>
+                <label><input type="radio" name="q4" value="D"> All of the above</label>
+            </div>
+            <div class="question">
+                <p>5. Which of the following is not a component of soil?</p>
+                <label><input type="radio" name="q5" value="A"> Air</label>
+                <label><input type="radio" name="q5" value="B"> Water</label>
+                <label><input type="radio" name="q5" value="C"> Animals</label>
+                <label><input type="radio" name="q5" value="D"> Rocks</label>
+            </div>
+            <div class="question">
+                <p>6. What is the process of breaking down of rocks into smaller particles called?</p>
+                <label><input type="radio" name="q6" value="A"> Erosion</label>
+                <label><input type="radio" name="q6" value="B"> Weathering</label>
+                <label><input type="radio" name="q6" value="C"> Deposition</label>
+                <label><input type="radio" name="q6" value="D"> Sedimentation</label>
+            </div>
+            <div class="question">
+                <p>7. Which soil is suitable for making pots and pans?</p>
+                <label><input type="radio" name="q7" value="A"> Sandy soil</label>
+                <label><input type="radio" name="q7" value="B"> Clayey soil</label>
+                <label><input type="radio" name="q7" value="C"> Loamy soil</label>
+                <label><input type="radio" name="q7" value="D"> Peaty soil</label>
+            </div>
+            <div class="question">
+                <p>8. Which of the following is a non-living component of soil?</p>
+                <label><input type="radio" name="q8" value="A"> Earthworms</label>
+                <label><input type="radio" name="q8" value="B"> Bacteria</label>
+                <label><input type="radio" name="q8" value="C"> Fungi</label>
+                <label><input type="radio" name="q8" value="D"> Minerals</label>
+            </div>
+            <div class="question">
+                <p>9. Which soil type is considered best for agriculture and gardening?</p>
+                <label><input type="radio" name="q9" value="A"> Sandy soil</label>
+                <label><input type="radio" name="q9" value="B"> Clayey soil</label>
+                <label><input type="radio" name="q9" value="C"> Loamy soil</label>
+                <label><input type="radio" name="q9" value="D"> Peaty soil</label>
+            </div>
+            <div class="question">
+                <p>10. What role does humus play in soil?</p>
+                <label><input type="radio" name="q10" value="A"> Provides nutrients to plants</label>
+                <label><input type="radio" name="q10" value="B"> Helps in retaining water</label>
+                <label><input type="radio" name="q10" value="C"> Improves soil structure</label>
+                <label><input type="radio" name="q10" value="D"> All of the above</label>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            const formData = new FormData(form);
+            const answers = {
+                q1: 'B',
+                q2: 'A',
+                q3: 'B',
+                q4: 'C',
+                q5: 'C',
+                q6: 'B',
+                q7: 'B',
+                q8: 'D',
+                q9: 'C',
+                q10: 'D'
+            };
+            let score = 0;
+
+            for (const [key, value] of formData.entries()) {
+                if (value === answers[key]) {
+                    score++;
+                }
+            }
+
+            localStorage.setItem('quizScore', score);
+            window.location.href = 'result.html';
+        }
+    </script>
+</body>
+
+</html>
